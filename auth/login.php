@@ -23,52 +23,51 @@
 ?>
 
 <?php
-    if(isset($_SESSION['login_id'])) {
+    if(isset($_SESSION['login_user_id'])) {
         if($_SESSION['login_type'] == 1) {
-            header("location:admin/index.php?page=home"); // Admin
+            header("location:admin/index.php"); // Admin
         } elseif ($_SESSION['login_type'] == 2) {
-            header("location:doctor/index.php?page=home"); // Doctor
+            header("location:doctor/index.php"); // Doctor
         }
     }
 ?>
 <?php include('header.php'); ?>
 <style>
-	body{
+	.login-body{
+        position: relative;
 		width: 100%;
 	    height: calc(100%);
-	    /*background: #007bff;*/
-	}
-	main#main{
-		width:100%;
-		height: calc(100%);
-		background:white;
+        display: flex;
+	    align-items: center;
+        justify-content: center;
 	}
 	#login-right{
-		position: absolute;
-		right:0;
-		width:40%;
+		display: flex;
+		width:50%;
 		height: calc(100%);
-		background:white;
 		display: flex;
 		align-items: center;
+        justify-content: center;
+        background:rgba(255, 255, 255, 0);
 	}
 	#login-left{
-		position: absolute;
-		left:0;
-		width:60%;
+		
+		width:50%;
 		height: calc(100%);
 		display: flex;
 		align-items: center;
-		/*background: url(assets/uploads/<?php //echo $_SESSION['system']['cover_img'] ?>);*/
-		background:rgba(10, 166, 228, 0.79);
-	    background-repeat: no-repeat;
-	    background-size: cover;
+		background:rgba(0, 0, 0, 0);
 	}
-	#login-right .card{
-		margin: auto;
+    .card-layout{
+        position: inherit;
+        width: 80%;
+        justify-self: center;
+    }
+	#login-right .card-layout{
 		z-index: 1
 	}
 	#login-form, .card-body, .w-100{
+        align-items: center;
 		animation: fadeInUp 1s ease;
 	}
 	/*#login-form input {
@@ -77,23 +76,28 @@
 		border-top: 0px;
 	}*/
 	.logo {
-		margin: auto;
-		font-size: 8rem;
-		padding: .5em 0.8em;
-		color: #000000b3;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2));
 		animation: fadeInUp 1s ease;
 }
 
 	.logo img {
-		width: 600px;
-		height: 600px;
-		transition: width 0.5s ease-out, height 0.5s ease-out;
-		animation: fadeInUp 1s ease;
+        margin-left: 13%;
+        width: 70%;
+        height: auto;
+        max-height: 85%;
+        object-fit: contain;
+        
+        transition: transform 0.5s ease-out; /* Smooth scaling */
+        animation: fadeInUp 1s ease;
+        transform-origin: center;
 	}
 	.logo img:hover {
-		width: 610px;
-		height: 610px;
+		transform: scale(1.05);
 	}
 	.click_here {
 			color: #007bff;
@@ -145,52 +149,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Maternal Health Tracking System</title>
 </head>
-<body>
-<main id="main" class=" bg-black">
-  		<div id="login-left">
-  			<div class="logo">
-				<a>
-  					<img src="assets/img/dashboard logo_02.png" alt="MHTS Logo">
-				</a>
-			</div>
-  		</div>
-
-  		<div id="login-right">
-  			<div class="w-100">
-  				<h3 class="text-info text-center"><b>Welcome Back</b></h3>
+    <div class="login-body">
+        <div id="login-left">
+            <div class="w-100">
+                <h3 class="text-info text-center"><b>Welcome Back</b></h3>
                 <h5 class="text-info text-center">Login to continue</h5>
-  				<br>
+                <br>
 
-  			<div class="card col-md-8">
-  				<div class="card-body">
-  						
-  					<form id="login-form" >
-  						<div class="form-group">
-  							<label for="username" class="control-label text-info fw-bold">Username</label>
-  							<input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
-  						</div>
-  						<div class="form-group" style="position:relative">
-  							<label for="password" class="control-label text-info fw-bold">Password</label>
-  							<input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
-							  <span class="eye_icon input-group-text" id="togglePassword" style="cursor: pointer;">
-								<i class="fa fa-eye"></i>
-							</span>
-  						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-info" id="login-btn">Login</button></center>
-						<div class="forgot_text">
-							<a class="forgot_password_text">Forgot your password?
-								
-							</a><a class="click_here" href="mailto:<?php //echo $_SESSION['system']['email']?>"> Click Here </a> <a class="forgot_password_text">to contact Admin.</a>
-						</div>
-  					</form>
-  				</div>
-  			</div>
-  			</div>
-  		</div>
-   
+                <div class="card-layout">
+                    <div class="card-body">
+                            
+                        <form id="login-form" >
+                            <div class="form-group">
+                                <label for="username" class="control-label text-info fw-bold">Username</label>
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group" style="position:relative">
+                                <label for="password" class="control-label text-info fw-bold">Password</label>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+                                <span class="eye_icon input-group-text" id="togglePassword" style="cursor: pointer;">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </div>
+                            <center><button class="btn-sm btn-block btn-wave col-md-4 btn-info">Login</button></center>
+                            <div class="forgot_text">
+                                <a class="forgot_password_text">Forgot your password?
+                                    
+                                </a><a class="click_here" href="mailto:<?php //echo $_SESSION['system']['email']?>"> Click Here </a> <a class="forgot_password_text">to contact Admin.</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div id="login-right">
+            <div class="logo">
+                <img src="assets/img/dashboard logo_02.png" alt="MHTS Logo">
+            </div>
+        </div>
 
-  </main>
-
+    </div>
+    
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 </body>
 

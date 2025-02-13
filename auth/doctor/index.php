@@ -1,12 +1,13 @@
 <?php
 session_start(); // Start the session
-
 // Check if the user is logged in, if not redirect to login page
-/*if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+if (!isset($_SESSION['login_user_id'])) {
+    header("Location: ../index.php");
     exit();
-}*/
+}
 ?>
+
+<?php include('../header.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,31 +16,14 @@ session_start(); // Start the session
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maternal Health Tracking System</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMXKtxzDgOsrGRtp1nANVOF0sA9oM/q77l3f1ps" crossorigin="anonymous">
+    
+
 </head>
 <body>
     <!-- Top Bar with Beautified Heading -->
     <header>
-        <div class="top-bar">
-            <h1>Maternal Health Tracking System</h1>
-        </div>
-        <!-- Navigation Bar -->
-        <nav class="navigation-bar">
-            <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
-            <a href="index.php" class="<?php echo ($current_page === 'index.php') ? 'active' : ''; ?>">Home</a>
-            <a href="patient_registration.php" class="<?php echo ($current_page === 'patient_registration.php') ? 'active' : ''; ?>">Patient Registration</a>
-            <a href="health_dashboard.php" class="<?php echo ($current_page === 'health_dashboard.php') ? 'active' : ''; ?>">Health Dashboard</a>
-            <a href="health.php" class="<?php echo ($current_page === 'health.php') ? 'active' : ''; ?>">Health Tracking</a>
-            <a href="notifications.php" class="<?php echo ($current_page === 'notifications.php') ? 'active' : ''; ?>">Notifications</a>
-            <a href="doctor_registration.php" class="<?php echo ($current_page === 'doctor_registration.php') ? 'active' : ''; ?>"> Doctor</a>
-            <a href="appointments.php" class="<?php echo ($current_page === 'appointments.php') ? 'active' : ''; ?>">Make Appointment</a>
-            <a href="about.php" class="<?php echo ($current_page === 'about.php') ? 'active' : ''; ?>">About Us</a>
-
-            <!-- Logout Button -->
-            <form action="logout.php" method="POST" style="display:inline;">
-                <button type="submit" class="logout-btn">Logout</button>
-            </form>
-        </nav>
+        <?php include '../topbar.php' ?>
+        <?php include '../navbar.php' ?>
     </header>
 
     <!-- Hero Section -->
@@ -79,4 +63,29 @@ session_start(); // Start the session
         </div>
     </footer>
 </body>
+
+<script>
+$(document).ready(function() {
+    $(document).on("click", ".logout-btn", function() { 
+        if (confirm("Are you sure you want to logout?")) { // Confirmation popup
+            $.ajax({
+                url: '../ajax/ajax.php?action=logout',
+                method: 'POST',
+                success: function(resp) {
+                    console.log("Logout Response:", resp); // ✅ Debugging Output
+                    if (resp.trim() == "1") { // Ensure it's properly checked
+                        window.location.href = "../index.php"; // Redirect after logout
+                    } else {
+                        alert("Logout failed. Please try again.");
+                    }
+                },
+                error: function(err) {
+                    console.error("AJAX Error:", err);
+                }
+            });
+        }
+    });
+});
+
+</script>
 </html>

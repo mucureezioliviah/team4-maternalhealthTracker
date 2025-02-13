@@ -53,11 +53,16 @@ Class Action {
 		}
 	}
 	function logout(){
+        if (session_status() == PHP_SESSION_NONE) { // ✅ Start session only if not already started
+            session_start();
+        }
 		session_destroy();
-		foreach ($_SESSION as $key => $value) {
-			unset($_SESSION[$key]);
-		}
-		header("location:login.php");
+		$_SESSION = array();
+        echo "1";
+        exit();
+        //header("/maternalhealth/auth/index.php");
+
+		
 	}
 
 	function save_user(){

@@ -11,8 +11,10 @@ if($action == 'login'){
 }
 if($action == 'logout'){
 	$logout = $act->logout();
-	if($logout)
-		echo $logout;
+	if ($logout) {
+        echo "1";
+    }
+	exit();
 }
 if($action == 'save_user'){
 	$save = $act->save_user();
