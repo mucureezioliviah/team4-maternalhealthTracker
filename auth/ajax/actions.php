@@ -41,26 +41,11 @@ Class Action {
 				file_put_contents($log_file, $log_entry . PHP_EOL, FILE_APPEND);
 
 				if ($user_data['type'] == 1) { // 1 = Admin
-                    $log_file = "session_log.txt";
-				    $log_data = print_r($_SESSION, true);
-				    $timestamp = date("Y-m-d H:i:s"); // Current date and time
-				    $log_entry = "[$timestamp] " . $log_data;
-				    file_put_contents($log_file, $log_entry . PHP_EOL, FILE_APPEND);
                     return 1;
 				} else if ($user_data['type'] == 2) { // 2 = Doctor
-                    $log_file = "session_log.txt";
-                    $log_data = print_r($_SESSION, true);
-                    $timestamp = date("Y-m-d H:i:s"); // Current date and time
-                    $log_entry = "[$timestamp] " . $log_data;
-                    file_put_contents($log_file, $log_entry . PHP_EOL, FILE_APPEND);
 					return 2;
 				}
 			} else {
-                $log_file = "session_log.txt";
-				$log_data = print_r($_SESSION, true);
-				$timestamp = date("Y-m-d H:i:s"); // Current date and time
-				$log_entry = "[$timestamp] " . $log_data;
-				file_put_contents($log_file, $log_entry . PHP_EOL, FILE_APPEND);
 				return 0; // Password mismatch
 			}
 		}else{

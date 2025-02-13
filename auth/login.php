@@ -2,13 +2,6 @@
     session_start();
     require_once 'db.php'; // Include the database connection file
 
-
-    $log_file = "session_log.txt";
-	$log_data = print_r($_SESSION, true);
-	$timestamp = date("Y-m-d H:i:s"); // Current date and time
-	$log_entry = "[$timestamp] " . $log_data;
-	file_put_contents($log_file, $log_entry . PHP_EOL, FILE_APPEND);
-
     ob_start();
     if (!isset($_SESSION['system'])) {
         $query = $conn->query("SELECT * FROM system_settings LIMIT 1");
@@ -230,12 +223,12 @@
 			error:err=>{
 				console.log(err)
 			},
-			info:function(resp){
+			success:function(resp){
 				console.log(resp);
 				if(resp == 1){
-					location.href ='admin';
+					location.href ='admin/index.php';
 				}else if(resp == 2){
-					location.href ='doctor';
+					location.href ='doctor/index.php';
 
 				}else if(resp == 3){
 					$('#login-form').prepend('<div class="alert alert-danger">Missing Username.</div>')
