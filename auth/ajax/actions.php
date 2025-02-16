@@ -99,6 +99,104 @@ Class Action {
 		if($delete)
 			return 1;
 	}
+	function save_patient(){
+		// Explicitly handle inputs
+		$firstName = $_POST['firstName'] ?? '';
+        $lastName = $_POST['lastName'] ?? '';
+        $emergencyContact = $_POST['emergencyContact'] ?? '';
+		$age = $_POST['age'] ?? '';
+		$address = $_POST['address'] ?? '';
+		$email =$_POST['email'] ?? '';
+		$contact = $_POST['contact'] ?? '';
+		$medicalHistory = $_POST['medicalHistory'] ?? '';
+		$patient_id = $_POST['id'] ?? null;
+	
+		// Insert or update user
+		if (empty($id)) {
+			$stmt = $this->db->prepare("INSERT INTO patients (first_name, last_name, emergency_contact, age, address, email, contact, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+		} else {
+			$stmt = $this->db->prepare("UPDATE patients SET first_name = ?, last_name = ?, emergency_contact = ?, age = ?, address = ?, email = ?, contact = ?, medical_history = ? WHERE patient_id = ?");
+			$stmt->bind_param("sssissssi", $firstName, $lastName, $emergencyContact, $age, $address, $email, $contact, $medicalHistory, $patient_id);
+		}
+	
+		$save = $stmt->execute();
+		if ($save) {
+			return 1;  // Success
+		} else {
+			return 0;  // Failure
+		}
+	}
+	function delete_patient(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM patients where id = ".$patient_id);
+		if($delete)
+			return 1;
+	}
+
+	function save_record(){
+		//First we extract, the required inputs from the POST global variable.
+		extract($_POST);
+		$data = "patient_id = '$patient_id'";
+		$data .= ", visit_date = '$visit_date'";
+		$data .= ", diagnosis = '$diagnosis'";
+		$data .= ", treatment = '$treatment'";
+		$data .= ", medications = '$medications'";
+		$data .= ", test_results = '$test_results'";
+		$data .= ", blood_pressure = '$blood_pressure'";
+		$data .= ", heart_rate = '$heart_rate'";
+		$data .= ", weight = '$weight'";
+		$data .= ", height = '$height'";
+		$data .= ", bmi = '$bmi'";
+		$data .= ", notes = '$notes'";
+		$data .= ", next_checkup_date = '$next_checkup_date'";
+
+		//create a new record or update an esisting one depending on the pressence of a record id or not.
+		if(empty($record_id)){
+			$save = $this->db->query("INSERT INTO health_records set ".$data);
+		}else{
+			$save = $this->db->query("UPDATE health_records set ".$data." where record_id=".$record_id);
+		}
+		if($save)
+			return 1;
+	}
+	function delete_record(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM health_records where record_id=".$record_id);
+		if($delete)
+			return 1;
+	}
+	function save_appointment(){
+		//First we extract, the required inputs from the POST global variable.
+		extract($_POST);
+		$data = "patient_id = '$patient_id'";
+		$data .= ", doctor_id = '$doctor_id'";
+		$data .= ", appointment_date = '$appointment_date'";
+		$data .= ", reason = '$reason'";
+		$data .= ", type = '$type'";
+		$data .= ", location = '$location'";
+		$data .= ", notes = '$notes'";
+		if(isset($status)){
+			$data .= ", status = '$status'";
+		} elseif (isset($notification)) {
+			$data .= ", notification_sent = '$notification'";
+		}
+
+		//create a new record or update an esisting one depending on the pressence of a record id or not.
+		if(empty($appointment_id)){
+			$save = $this->db->query("INSERT INTO appointments set ".$data);
+		}else{
+			$save = $this->db->query("UPDATE appointments set ".$data." where appointment_id=".$appointment_id);
+		}
+		if($save)
+			return 1;
+	}
+	function delete_appointment(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM appointments where appointment_id=".$appointment_id);
+		if($delete)
+			return 1;
+	}
+	
 	/*function signup(){
 		extract($_POST);
 		$data = " name = '$name' ";
@@ -234,16 +332,16 @@ Class Action {
 		if(isset($status))
 		$data .= ", status = '$status' ";
 		if(empty($id)){
-			$save = $this->db->query("INSERT INTO venue_booking set ".$data);
+			$save = $this->db->query("INSERT INTO health_records set ".$data);
 		}else{
-			$save = $this->db->query("UPDATE venue_booking set ".$data." where id=".$id);
+			$save = $this->db->query("UPDATE health_records set ".$data." where id=".$id);
 		}
 		if($save)
 			return 1;
 	}
 	function delete_book(){
 		extract($_POST);
-		$delete = $this->db->query("DELETE FROM venue_booking where id = ".$id);
+		$delete = $this->db->query("DELETE FROM health_records where id = ".$id);
 		if($delete){
 			return 1;
 		}

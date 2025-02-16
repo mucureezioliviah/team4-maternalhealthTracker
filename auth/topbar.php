@@ -39,7 +39,7 @@
   		</div>
       <div class="col-md-4 float-left text-white">
         <img src="/maternalhealth/auth/assets/img/dashboard logo.png" class="logo">
-        <large><b><?php echo isset($_SESSION['login_username']) ? $_SESSION['login_username'] : '' ?> | Doctor</b></large>
+        <large><b><?php echo isset($_SESSION['login_username']) ? $_SESSION['login_username'] : '' ?> | <?php echo ($_SESSION['login_type'] == 1) ? "Admin" : "Doctor" ?></b></large>
       </div>
 	  	<div class="user_session float-right">
         <div class=" dropdown mr-4">

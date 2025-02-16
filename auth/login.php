@@ -97,19 +97,21 @@
         transform-origin: center;
 	}
 	.logo img:hover {
-		transform: scale(1.05);
+		transform: scale(1.02);
 	}
 	.click_here {
-			color: #007bff;
+			color:rgb(27, 153, 255);
 			text-decoration: none;
 		}
 	.forgot_password_text {
 		font-size: 1rem;
 		font-style: italic;
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		mix-blend-mode: difference;
 	}
 	.forgot_text {
 		margin-top: 1rem;
+		color: white;
 	}
 	.eye_icon {
 		position: absolute;
@@ -125,7 +127,21 @@
     .eye_icon:hover{
         color: #007bff;
     }
-    
+    .text {
+		color: rgb(8, 170, 235);
+		filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+	}
+	.btn-sm {
+		background-color: rgb(10, 166, 228);
+		border-radius: 5px;
+		filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+		transition: transform 0.3s ease-out;
+		transform-origin: 30% center;
+	}
+	.btn-sm:hover {
+		background-color: rgb(32, 188, 250);
+		transform: scale(1.02);
+	}
 
 	input.form-control {
 		padding-right: 40px; /* Add padding to the input field so the text doesn't overlap the icon */
@@ -152,8 +168,8 @@
     <div class="login-body">
         <div id="login-left">
             <div class="w-100">
-                <h3 class="text-info text-center"><b>Welcome Back</b></h3>
-                <h5 class="text-info text-center">Login to continue</h5>
+                <h3 class="text text-center"><b>Welcome Back</b></h3>
+                <h5 class="text text-center">Login to continue</h5>
                 <br>
 
                 <div class="card-layout">
@@ -161,21 +177,19 @@
                             
                         <form id="login-form" >
                             <div class="form-group">
-                                <label for="username" class="control-label text-info fw-bold">Username</label>
+                                <label for="username" class="control-label text fw-bold">Username</label>
                                 <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
                             </div>
                             <div class="form-group" style="position:relative">
-                                <label for="password" class="control-label text-info fw-bold">Password</label>
+                                <label for="password" class="control-label text fw-bold">Password</label>
                                 <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
                                 <span class="eye_icon input-group-text" id="togglePassword" style="cursor: pointer;">
                                     <i class="fa fa-eye"></i>
                                 </span>
                             </div>
-                            <center><button class="btn-sm btn-block btn-wave col-md-4 btn-info">Login</button></center>
+                            <center><button type="submit" class="btn-sm btn-block col-md-4 btn">Login</button></center>
                             <div class="forgot_text">
-                                <a class="forgot_password_text">Forgot your password?
-                                    
-                                </a><a class="click_here" href="mailto:<?php //echo $_SESSION['system']['email']?>"> Click Here </a> <a class="forgot_password_text">to contact Admin.</a>
+                                <a class="forgot_password_text">Forgot your password? </a><a class="click_here" href="mailto:<?php //echo $_SESSION['system']['email']?>"> Click Here </a> <a class="forgot_password_text">to contact Admin.</a>
                             </div>
                         </form>
                     </div>
@@ -212,7 +226,7 @@
 
 	$('#login-form').submit(function(e){
 		e.preventDefault()
-		$('#login-form button[type="button"]').attr('disabled',true).html('Logging in...');
+		$('#login-form button[type="submit"]').attr('disabled',true).html('Logging in...');
 		if($(this).find('.alert-danger').length > 0 )
 			$(this).find('.alert-danger').remove();
 		$.ajax({

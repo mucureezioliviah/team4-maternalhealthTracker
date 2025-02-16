@@ -26,44 +26,39 @@ if($action == 'delete_user'){
 	if($save)
 		echo $save;
 }
-/*
-if($action == 'signup'){
-	$save =
-    $act->signup();
+
+if($action == 'save_patient'){
+	$save = $act->save_patient();
 	if($save)
 		echo $save;
 }
-if($action == "save_settings"){
-	$save =
-    $act->save_settings();
+if($action == "delete_patient"){
+	$save = $act->delete_patient();
 	if($save)
 		echo $save;
 }
-if($action == "save_venue"){
-	$save =
-    $act->save_venue();
+if($action == "save_record"){
+	$save = $act->save_record();
 	if($save)
 		echo $save;
 }
-if($action == "save_book"){
-	$save =
-    $act->save_book();
+if($action == "delete_record"){
+	$save = $act->delete_record();
 	if($save)
 		echo $save;
 }
-if($action == "delete_book"){
-	$save =
-    $act->delete_book();
+if($action == "save_appointment"){
+	$save = $act->save_appointment();
 	if($save)
 		echo $save;
 }
 
-if($action == "save_register"){
-	$save =
-    $act->save_register();
+if($action == "delete_appointment"){
+	$save = $act->delete_appointment();
 	if($save)
 		echo $save;
 }
+/*
 if($action == "delete_register"){
 	$save =
     $act->delete_register();

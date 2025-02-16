@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once 'db.php';  // Include database connection
+require_once '../db.php';  // Include database connection
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -63,23 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="patient_registration.css"> <!-- Use the existing stylesheet -->
 </head>
 <body>
-    <!-- Top Bar with Beautified Heading -->
-    <header>
-        <div class="top-bar">
-            <h1>Maternal Health Tracking System</h1>
-        </div>
-        <!-- Navigation Bar -->
-        <nav class="navigation-bar">
-            <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
-            <a href="homepage.php" class="<?php echo ($current_page === 'homepage.php') ? 'active' : ''; ?>">Home</a>
-            <a href="patient_registration.php" class="<?php echo ($current_page === 'patient_registration.php') ? 'active' : ''; ?>">Patient Registration</a>
-            <a href="health_dashboard.php" class="<?php echo ($current_page === 'health_dashboard.php') ? 'active' : ''; ?>">Health Dashboard</a>
-            <a href="health.php" class="<?php echo ($current_page === 'health.php') ? 'active' : ''; ?>">Health Tracking</a>
-            <a href="appointments.php" class="<?php echo ($current_page === 'appointments.php') ? 'active' : ''; ?>">Appointments</a>
-            <a href="about.php" class="<?php echo ($current_page === 'about.php') ? 'active' : ''; ?>">About Us</a>
-        </nav>
-    </header>
-
     <!-- Appointment Section -->
     <main>
         <section class="appointment-container">

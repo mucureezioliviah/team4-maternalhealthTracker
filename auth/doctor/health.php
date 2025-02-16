@@ -1,6 +1,6 @@
 <?php
 // Include database connection setup
-require_once 'db.php';
+require_once '../db.php';
 
 $successMessage = $errorMessage = ''; // Initialize success and error messages
 
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Fetch records for the current patient (replace `1` with dynamic `patient_id`)
 // Optionally, you can remove this block if patient records should be displayed dynamically
 $patient_id = 1; // This should be dynamically fetched based on session or user
-$sql = "SELECT * FROM healthrecords WHERE patient_id = ?";
+$sql = "SELECT * FROM health_records WHERE patient_id = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$patient_id]);
 $records = $stmt->fetchAll();
@@ -55,25 +55,6 @@ $records = $stmt->fetchAll();
     <link rel="stylesheet" href="health.css">
 </head>
 <body>
-
-<!-- Top Bar with Beautified Heading -->
-<header>
-    <div class="top-bar">
-        <h1>Maternal Health Tracking</h1>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navigation-bar">
-        <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
-        <a href="homepage.php" class="<?php echo ($current_page === 'homepage.php') ? 'active' : ''; ?>">Home</a>
-        <a href="health.php" class="<?php echo ($current_page === 'health.php') ? 'active' : ''; ?>">Maternal Health</a>
-        <a href="patient_registration.php" class="<?php echo ($current_page === 'patient_registration.php') ? 'active' : ''; ?>">Patient Registration</a>
-        <a href="notifications.php" class="<?php echo ($current_page === 'notifications.php') ? 'active' : ''; ?>">Notifications</a>
-        <a href="appointments.php" class="<?php echo ($current_page === 'appointments.php') ? 'active' : ''; ?>">Make Appointment</a>
-        <a href="doctor_registration.php" class="<?php echo ($current_page === 'doctor_registration.php') ? 'active' : ''; ?>"> Doctor</a>
-        <a href="about.php" class="<?php echo ($current_page === 'about.php') ? 'active' : ''; ?>">About Us</a>
-    </nav>
-</header>
 
 <main>
     <!-- Hero Section -->

@@ -50,3 +50,109 @@
     [login_updated_at] => 2025-02-13 12:12:36
 )
 
+[2025-02-14 16:33:53] Array
+(
+    [system] => Array
+        (
+            [setting_id] => 1
+            [user_id] => 2
+            [notification_preference] => in-app
+            [theme] => system
+            [data_export_preference] => pdf
+            [dashboard_view] => dashboard
+            [auto_logout] => 1
+            [session_timeout] => 15
+            [created_at] => 2025-02-13 11:33:33
+            [updated_at] => 2025-02-13 11:33:33
+        )
+
+    [login_user_id] => 5
+    [login_username] => Jovitah
+    [login_email] => example2@gmail.com
+    [login_first_name] => Jovitah
+    [login_last_name] => Lovely
+    [login_type] => 2
+    [login_created_at] => 2025-02-13 12:12:36
+    [login_updated_at] => 2025-02-13 12:12:36
+)
+
+[2025-02-14 16:43:53] Array
+(
+    [system] => Array
+        (
+            [setting_id] => 1
+            [user_id] => 2
+            [notification_preference] => in-app
+            [theme] => system
+            [data_export_preference] => pdf
+            [dashboard_view] => dashboard
+            [auto_logout] => 1
+            [session_timeout] => 15
+            [created_at] => 2025-02-13 11:33:33
+            [updated_at] => 2025-02-13 11:33:33
+        )
+
+    [login_user_id] => 5
+    [login_username] => Jovitah
+    [login_email] => example2@gmail.com
+    [login_first_name] => Jovitah
+    [login_last_name] => Lovely
+    [login_type] => 2
+    [login_created_at] => 2025-02-13 12:12:36
+    [login_updated_at] => 2025-02-13 12:12:36
+)
+
+[2025-02-14 19:01:35] Array
+(
+    [system] => Array
+        (
+            [0] => 1
+            [id] => 1
+            [1] => Event Management System
+            [name] => Event Management System
+            [2] => tjdave57@gmail.com
+            [email] => tjdave57@gmail.com
+            [3] => +256 777 412 757
+            [contact] => +256 777 412 757
+            [4] => 1734386520_pexels-rostislav-5011647.jpg
+            [cover_img] => 1734386520_pexels-rostislav-5011647.jpg
+            [5] => &lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;EVENT MANAGEMENT SYSTEM (EMS)&lt;/span&gt;&lt;/p&gt;&lt;p data-sourcepos=&quot;3:1-3:25&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Your Event, Elevated.&lt;/span&gt;&lt;/p&gt;&lt;p data-sourcepos=&quot;5:1-5:175&quot;&gt;EMS is your one-stop solution for all your event needs. Whether you&rsquo;re a passionate event planner, a curious attendee, or a venue owner, we&rsquo;ve got you covered.&lt;/p&gt;&lt;p data-sourcepos=&quot;7:1-7:23&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Event Planners:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;9:1-12:0&quot;&gt;&lt;li data-sourcepos=&quot;9:1-9:120&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Effortless Event Creation:&lt;/span&gt;&amp;nbsp;Easily create and manage your events, from small gatherings to large-scale conferences.&lt;/li&gt;&lt;li data-sourcepos=&quot;10:1-10:89&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Seamless Venue Booking:&lt;/span&gt;&amp;nbsp;Find and book the perfect venue to suit your event&rsquo;s needs.&lt;/li&gt;&lt;li data-sourcepos=&quot;11:1-12:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Engaged Audience:&lt;/span&gt;&amp;nbsp;Reach a wider audience and attract more attendees.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;13:1-13:24&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Event Attendees:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;15:1-18:0&quot;&gt;&lt;li data-sourcepos=&quot;15:1-15:85&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Discover Exciting Events:&lt;/span&gt;&amp;nbsp;Explore a diverse range of events happening near you.&lt;/li&gt;&lt;li data-sourcepos=&quot;16:1-16:73&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Easy Event Registration:&lt;/span&gt;&amp;nbsp;Sign up for events with just a few clicks.&lt;/li&gt;&lt;li data-sourcepos=&quot;17:1-18:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Stay Updated:&lt;/span&gt;&amp;nbsp;Receive timely notifications and reminders.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;19:1-19:21&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Venue Owners:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;21:1-24:0&quot;&gt;&lt;li data-sourcepos=&quot;21:1-21:73&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Showcase Your Space:&lt;/span&gt;&amp;nbsp;List your venue and attract potential clients.&lt;/li&gt;&lt;li data-sourcepos=&quot;22:1-22:68&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Manage Bookings:&lt;/span&gt;&amp;nbsp;Efficiently manage bookings and availability.&lt;/li&gt;&lt;li data-sourcepos=&quot;23:1-24:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Maximize Revenue:&lt;/span&gt;&amp;nbsp;Increase your venue&rsquo;s occupancy and revenue.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;25:1-25:43&quot;&gt;Join us in redefining the event experience.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+            [about_content] => &lt;p style=&quot;text-align: center; background: transparent; position: relative;&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;EVENT MANAGEMENT SYSTEM (EMS)&lt;/span&gt;&lt;/p&gt;&lt;p data-sourcepos=&quot;3:1-3:25&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Your Event, Elevated.&lt;/span&gt;&lt;/p&gt;&lt;p data-sourcepos=&quot;5:1-5:175&quot;&gt;EMS is your one-stop solution for all your event needs. Whether you&rsquo;re a passionate event planner, a curious attendee, or a venue owner, we&rsquo;ve got you covered.&lt;/p&gt;&lt;p data-sourcepos=&quot;7:1-7:23&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Event Planners:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;9:1-12:0&quot;&gt;&lt;li data-sourcepos=&quot;9:1-9:120&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Effortless Event Creation:&lt;/span&gt;&amp;nbsp;Easily create and manage your events, from small gatherings to large-scale conferences.&lt;/li&gt;&lt;li data-sourcepos=&quot;10:1-10:89&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Seamless Venue Booking:&lt;/span&gt;&amp;nbsp;Find and book the perfect venue to suit your event&rsquo;s needs.&lt;/li&gt;&lt;li data-sourcepos=&quot;11:1-12:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Engaged Audience:&lt;/span&gt;&amp;nbsp;Reach a wider audience and attract more attendees.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;13:1-13:24&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Event Attendees:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;15:1-18:0&quot;&gt;&lt;li data-sourcepos=&quot;15:1-15:85&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Discover Exciting Events:&lt;/span&gt;&amp;nbsp;Explore a diverse range of events happening near you.&lt;/li&gt;&lt;li data-sourcepos=&quot;16:1-16:73&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Easy Event Registration:&lt;/span&gt;&amp;nbsp;Sign up for events with just a few clicks.&lt;/li&gt;&lt;li data-sourcepos=&quot;17:1-18:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Stay Updated:&lt;/span&gt;&amp;nbsp;Receive timely notifications and reminders.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;19:1-19:21&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;For Venue Owners:&lt;/span&gt;&lt;/p&gt;&lt;ul data-sourcepos=&quot;21:1-24:0&quot;&gt;&lt;li data-sourcepos=&quot;21:1-21:73&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Showcase Your Space:&lt;/span&gt;&amp;nbsp;List your venue and attract potential clients.&lt;/li&gt;&lt;li data-sourcepos=&quot;22:1-22:68&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Manage Bookings:&lt;/span&gt;&amp;nbsp;Efficiently manage bookings and availability.&lt;/li&gt;&lt;li data-sourcepos=&quot;23:1-24:0&quot;&gt;&lt;span style=&quot;font-weight: bolder;&quot;&gt;Maximize Revenue:&lt;/span&gt;&amp;nbsp;Increase your venue&rsquo;s occupancy and revenue.&lt;/li&gt;&lt;/ul&gt;&lt;p data-sourcepos=&quot;25:1-25:43&quot;&gt;Join us in redefining the event experience.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+        )
+
+    [login_user_id] => 5
+    [login_username] => Jovitah
+    [login_email] => example2@gmail.com
+    [login_first_name] => Jovitah
+    [login_last_name] => Lovely
+    [login_type] => 2
+    [login_created_at] => 2025-02-13 12:12:36
+    [login_updated_at] => 2025-02-13 12:12:36
+)
+
+[2025-02-16 17:26:30] Array
+(
+    [system] => Array
+        (
+            [setting_id] => 1
+            [user_id] => 2
+            [notification_preference] => in-app
+            [theme] => system
+            [data_export_preference] => pdf
+            [dashboard_view] => dashboard
+            [auto_logout] => 1
+            [session_timeout] => 15
+            [created_at] => 2025-02-13 11:33:33
+            [updated_at] => 2025-02-13 11:33:33
+        )
+
+    [login_user_id] => 5
+    [login_username] => Jovitah
+    [login_email] => example2@gmail.com
+    [login_first_name] => Jovitah
+    [login_last_name] => Lovely
+    [login_type] => 2
+    [login_created_at] => 2025-02-13 12:12:36
+    [login_updated_at] => 2025-02-13 12:12:36
+)
+

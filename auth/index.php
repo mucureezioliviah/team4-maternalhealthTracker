@@ -29,10 +29,10 @@
 		transform: translate(-50%, -50%); /* Perfect centering */
 		width: 70%; /* Adjust size */
 		height: 55%;
-		padding: 20px;
+		padding: 10px;
 		background: rgba(255, 255, 255, 0.2); /* Translucent white */
-		backdrop-filter: blur(10px); /* ✅ Glassmorphism effect */
-		border-radius: 10px; /* Rounded corners */
+		backdrop-filter: blur(15px); /* ✅ Glassmorphism effect */
+		border-radius: 15px; /* Rounded corners */
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
 		z-index: 5;
 	}
@@ -42,7 +42,10 @@
     background: rgba(255, 255, 255, 0.1); /* Light translucency */
 }
 	#portal-left{
-		background:white;
+		background:url(assets/img/pregnant_01.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 120%;
 	}
 	#portal-right{
 		background:rgba(10, 166, 228, 0.79);
@@ -65,7 +68,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal</title>
+    <title>MHTS - Portal</title>
 </head>
 <body>
 	<main id="main" class=" bg-black">

@@ -47,3 +47,13 @@ $base_url = '/maternalHealth/auth/';
 <script src="<?= $base_url ?>assets/js/select2.min.js"></script>
 <script src="<?= $base_url ?>assets/js/jquery.datetimepicker.full.min.js"></script>
 <script src="<?= $base_url ?>assets/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Popper.js (required for Bootstrap's dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -8,21 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMXKtxzDgOsrGRtp1nANVOF0sA9oM/q77l3f1ps" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Header and Navigation -->
-    <header>
-        <div class="top-bar">
-            <h1>Maternal Health Tracking System</h1>
-        </div>
-        <nav class="navigation-bar">
-            <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
-            <a href="homepage.php" class="<?php echo ($current_page === 'homepage.php') ? 'active' : ''; ?>">Home</a>
-            <a href="patient_registration.php" class="<?php echo ($current_page === 'patient_registration.php') ? 'active' : ''; ?>">Patient Registration</a>
-            <a href="health_dashboard.php" class="<?php echo ($current_page === 'health_dashboard.php') ? 'active' : ''; ?>">Health Dashboard</a>
-            <a href="health.php" class="<?php echo ($current_page === 'health.php') ? 'active' : ''; ?>">Health Tracking</a>
-            <a href="notifications.php" class="<?php echo ($current_page === 'notifications.php') ? 'active' : ''; ?>">Notifications</a>
-            <a href="about.php" class="<?php echo ($current_page === 'about.php') ? 'active' : ''; ?>">About Us</a>
-        </nav>
-    </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
