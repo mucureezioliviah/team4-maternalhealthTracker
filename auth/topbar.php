@@ -5,7 +5,12 @@
 }
 .user_session {
   margin: 5px;
+  margin-right: 50px;
 }
+.navbar{
+  background:rgb(10, 166, 228);
+}
+
 </style>
 
 <script>$(document).ready(function() {
@@ -31,7 +36,7 @@
     });
 });</script>
 
-<nav class="navbar navbar-light fixed-top bg-success" style="padding:0;min-height: 3.5rem">
+<nav class="navbar navbar-light fixed-top " style="padding:0;min-height: 3.5rem">
   <div class="container-fluid mt-2 mb-2">
   	<div class="col-lg-12">
   		<div class="col-md-1 float-left" style="display: flex;">
@@ -46,7 +51,7 @@
             <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_username'] ?> </a>
               <div class="dropdown-menu" aria-labelledby="account_settings" style="left: -2.5em;">
                 <a class="dropdown-item" href="javascript:void(0)" id="manage_my_account"><i class="fa fa-cog"></i> Manage Account</a>
-                <a class="dropdown-item" href="../"><i class="fa fa-home"></i> Site Home</a>
+                <a class="dropdown-item" href="../../"><i class="fa fa-home"></i> Site Home</a>
                 <a class="dropdown-item logout-link" href="/maternalhealth/auth/ajax/ajax.php?action=logout"><i class="fa fa-power-off"></i> Logout</a>
 
               </div>

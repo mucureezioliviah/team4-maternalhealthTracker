@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collapsible Sidebar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             display: flex;
         }
 
         #sidebar {
-            width: 300px;
-            height: 100%;
+            position: fixed;
+            width: 250px;
+            height: 100vh;
 			padding-top: 50px;
             background: #343a40;
             transition: width 0.3s ease;
             overflow: hidden;
+            top: 0px;
+            left: 0px;
         }
 
         #sidebar.collapsed {
-            width: 80px;
+            width: 60px;
         }
 
         #sidebar .nav-item {
@@ -89,15 +90,42 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            let isCollapsed = sessionStorage.getItem('sidebarCollapsed');
+
+            if (isCollapsed === null) {
+                sessionStorage.setItem('sidebarCollapsed', 'false');
+                isCollapsed = 'false';
+            }
+
+            console.log('Sidebar script - Initial sidebarCollapsed value from sessionStorage:', isCollapsed);
+
+            // Apply sidebar state
+            if (isCollapsed === 'true') {
+                sidebar.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+            }
+
+            menuToggle.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                
+                // Update sessionStorage
+                const newState = sidebar.classList.contains('collapsed') ? 'true' : 'false';
+                sessionStorage.setItem('sidebarCollapsed', newState);
+
+                console.log('Sidebar script - Sidebar toggled. New sidebarCollapsed value:', newState);
+
+                // Dispatch an event to notify other scripts (like main content)
+                window.dispatchEvent(new CustomEvent('sidebarStateChanged', { detail: { collapsed: newState } }));
+            });
         });
 
-        $('.nav-<?php echo isset($_GET['page']) ? $_GET['page'] : '' ?>').addClass('active');
+
     </script>
 </body>
 </html>

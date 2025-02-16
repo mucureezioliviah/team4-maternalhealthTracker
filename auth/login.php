@@ -165,7 +165,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Maternal Health Tracking System</title>
 </head>
-    <div class="login-body">
+	<div class="login-body">
         <div id="login-left">
             <div class="w-100">
                 <h3 class="text text-center"><b>Welcome Back</b></h3>
@@ -187,7 +187,7 @@
                                     <i class="fa fa-eye"></i>
                                 </span>
                             </div>
-                            <center><button type="submit" class="btn-sm btn-block col-md-4 btn">Login</button></center>
+                            <center><button type="submit" class="show-loading btn-sm btn-block col-md-4 btn">Login</button></center>
                             <div class="forgot_text">
                                 <a class="forgot_password_text">Forgot your password? </a><a class="click_here" href="mailto:<?php //echo $_SESSION['system']['email']?>"> Click Here </a> <a class="forgot_password_text">to contact Admin.</a>
                             </div>
@@ -207,6 +207,8 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 </body>
 
+<?php include('loading_overlay.php') ?>
+
 <script>
 	document.getElementById('togglePassword').addEventListener('click', function () {
 		const passwordInput = document.getElementById('password');
@@ -224,34 +226,44 @@
 		}
 		});
 
-	$('#login-form').submit(function(e){
-		e.preventDefault()
-		$('#login-form button[type="submit"]').attr('disabled',true).html('Logging in...');
-		if($(this).find('.alert-danger').length > 0 )
-			$(this).find('.alert-danger').remove();
-		$.ajax({
-			url:'ajax/ajax.php?action=login',
-			method:'POST',
-			data:$(this).serialize(),
-			error:err=>{
-				console.log(err)
-			},
-			success:function(resp){
-				console.log(resp);
-				if(resp == 1){
-					location.href ='admin/index.php';
-				}else if(resp == 2){
-					location.href ='doctor/index.php';
+		$('#login-form').submit(function(e){
+			e.preventDefault();
+			
+			// Show a loading indicator
+			$('#login-form button[type="submit"]').attr('disabled', true).html('Logging in...');
 
-				}else if(resp == 3){
-					$('#login-form').prepend('<div class="alert alert-danger">Missing Username.</div>')
-					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
-				}else{
-					$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>')
-					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
+			// Ensure any previous error messages are removed
+			if($(this).find('.alert-danger').length > 0)
+				$(this).find('.alert-danger').remove();
+
+			$.ajax({
+				url: 'ajax/ajax.php?action=login',
+				method: 'POST',
+				data: $(this).serialize(),
+				error: function(err) {
+					console.log(err);
+					$('#login-form button[type="submit"]').removeAttr('disabled').html('Login');
+				},
+				success: function(resp) {
+					console.log(resp);
+					if (resp == 1) {
+						showLoading(); // Show loader on successful login
+						setTimeout(() => { location.href = 'admin/index.php'; }, 2000); 
+					} else if (resp == 2) {
+						showLoading(); // Show loader on successful login
+						setTimeout(() => { location.href = 'doctor/index.php'; }, 2000);
+					} else if (resp == 3) {
+						$('#login-form').prepend('<div class="alert alert-danger">Missing Username.</div>');
+						$('#login-form button[type="submit"]').removeAttr('disabled').html('Login');
+					} else {
+						$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>');
+						$('#login-form button[type="submit"]').removeAttr('disabled').html('Login');
+					}
 				}
-			}
-		})
-	})
+			});
+		});
+
 </script>
+
+<script src="js/loader.js"></script>
 </html>

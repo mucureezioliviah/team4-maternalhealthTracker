@@ -11,7 +11,7 @@ $base_url = '/maternalHealth/auth/';
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="<?= $base_url ?>assets/font-awesome/css/all.min.css">
 
 <!-- Vendor CSS Files -->
 <link rel="stylesheet" href="<?= $base_url ?>assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -27,6 +27,7 @@ $base_url = '/maternalHealth/auth/';
 <link rel="stylesheet" href="<?= $base_url ?>assets/css/select2.min.css">
 <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
 <link rel="stylesheet" href="<?= $base_url ?>assets/css/jquery-te-1.4.0.css">
+<link rel="stylesheet" href="<?= $base_url ?>assets/vendor/bootstrap-4.6.2/css/bootstrap.min.css">
 
 <!-- jQuery (Ensure it's loaded first) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -42,18 +43,18 @@ $base_url = '/maternalHealth/auth/';
 <script src="<?= $base_url ?>assets/vendor/counterup/counterup.min.js"></script>
 <script src="<?= $base_url ?>assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="<?= $base_url ?>assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="<?= $base_url ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= $base_url ?>assets/vendor/bootstrap-4.6.2/js/bootstrap.min.js"></script>
 
 <!-- Additional JS Files -->
 <script src="<?= $base_url ?>assets/js/select2.min.js"></script>
 <script src="<?= $base_url ?>assets/js/jquery.datetimepicker.full.min.js"></script>
 <script src="<?= $base_url ?>assets/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 
 <!-- Popper.js (required for Bootstrap's dropdowns) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
 <!-- Bootstrap JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
