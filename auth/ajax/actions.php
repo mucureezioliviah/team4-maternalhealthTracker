@@ -101,37 +101,52 @@ Class Action {
 	}
 	function save_patient(){
 		// Explicitly handle inputs
-		$firstName = $_POST['firstName'] ?? '';
-        $lastName = $_POST['lastName'] ?? '';
-        $emergencyContact = $_POST['emergencyContact'] ?? '';
+		$firstName = $_POST['first_name'] ?? '';
+		$lastName = $_POST['last_name'] ?? '';
+		$emergencyContact = $_POST['emergency_contact'] ?? '';
 		$age = $_POST['age'] ?? '';
 		$address = $_POST['address'] ?? '';
-		$email =$_POST['email'] ?? '';
-		$contact = $_POST['contact'] ?? '';
-		$medicalHistory = $_POST['medicalHistory'] ?? '';
+		$email = $_POST['patient_email'] ?? '';
+		$contact = $_POST['patient_contact'] ?? '';
+		$medicalHistory = $_POST['medical_history'] ?? '';
+
 		$patient_id = $_POST['id'] ?? null;
 	
 		// Insert or update user
-		if (empty($id)) {
+		if (empty($patient_id)) {
 			$stmt = $this->db->prepare("INSERT INTO patients (first_name, last_name, emergency_contact, age, address, email, contact, medical_history) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+			$stmt->bind_param("sssissss", $firstName, $lastName, $emergencyContact, $age, $address, $email, $contact, $medicalHistory);
 		} else {
 			$stmt = $this->db->prepare("UPDATE patients SET first_name = ?, last_name = ?, emergency_contact = ?, age = ?, address = ?, email = ?, contact = ?, medical_history = ? WHERE patient_id = ?");
 			$stmt->bind_param("sssissssi", $firstName, $lastName, $emergencyContact, $age, $address, $email, $contact, $medicalHistory, $patient_id);
 		}
+		
 	
 		$save = $stmt->execute();
 		if ($save) {
 			return 1;  // Success
 		} else {
+			// Log MySQL error for debugging
+			error_log($stmt->error); 
 			return 0;  // Failure
 		}
 	}
-	function delete_patient(){
-		extract($_POST);
-		$delete = $this->db->query("DELETE FROM patients where id = ".$patient_id);
-		if($delete)
+	function delete_patient() {
+		$patient_id = $_POST['id'];  // Assuming 'id' is the key used in your POST request
+	
+		// Prepare the DELETE statement to prevent SQL injection
+		$stmt = $this->db->prepare("DELETE FROM patients WHERE patient_id = ?");
+		$stmt->bind_param("i", $patient_id);
+	
+		if ($stmt->execute()) {
 			return 1;
+		} else {
+			// Log the error for debugging
+			error_log($stmt->error);
+			return 0;
+		}
 	}
+	
 
 	function save_record(){
 		//First we extract, the required inputs from the POST global variable.

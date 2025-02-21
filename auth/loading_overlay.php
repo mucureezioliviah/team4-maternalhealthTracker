@@ -82,8 +82,8 @@
 }
 </style>
 
-<div class="load-screen" id="loading-overlay">
-		<div class="load">
-			<div class="loader"></div>
-		</div>
+<div class="load-screen" id="loading-overlay" style="display: none;">
+    <div class="load">
+        <div class="loader"></div>
+    </div>
 </div>

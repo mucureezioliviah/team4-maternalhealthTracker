@@ -5,14 +5,21 @@ if (!isset($_SESSION['login_user_id'])) {
     header("Location: ../index.php");
     exit();
 }
+// Include database connection setup
+require_once '../db.php';
 ?>
 
 <?php include('../header.php'); ?>
 <style>
+    body{
+        background: rgb(230, 247, 255);
+    }
    #main-content {
-        margin-top: 50px;
+        background: rgb(230, 247, 255);
+        width: 100%;
+        margin-top: 55px;
         margin-left: 250px; /* Default margin to match sidebar width */
-        padding: 20px;
+        padding: 10px;
         transition: margin-left 0.3s ease; /* Smooth transition */
     }
 
@@ -26,18 +33,34 @@ if (!isset($_SESSION['login_user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maternal Health Tracking System</title>
-    <link rel="stylesheet" href="css/index.css"> 
 
 </head>
 <body>
     <?php include '../topbar.php' ?>
     <?php include '../navbar.php' ?>
+    <?php include '../loading_overlay.php' ?>
+
+    <div class="modal fade" id="uni_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="msg"></div>
 
     <main id="main-content" >
         <?php $page = isset($_GET['page']) ? $_GET['page'] :'home'; ?>
   	    <?php include $page.'.php' ?>
     </main>
 
+    <script src="../js/loader.js"></script>
+    <script src="js/uni_modal.js"></script>
     <script>
        document.addEventListener('DOMContentLoaded', function () {
             const mainContent = document.getElementById('main-content');
@@ -61,9 +84,7 @@ if (!isset($_SESSION['login_user_id'])) {
                 applySidebarState(event.detail.collapsed);
             });
         });
-
-
-</script>
+    </script>
 
 </body>
 </html>
