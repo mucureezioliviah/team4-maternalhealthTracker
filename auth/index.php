@@ -1,5 +1,27 @@
 <?php
-    if(isset($_SESSION['login_user_id'])) {
+    session_start();
+    require_once 'db.php'; // Include the database connection file
+
+    ob_start();
+    if (!isset($_SESSION['system'])) {
+        $query = $conn->query("SELECT * FROM system_settings LIMIT 1");
+    
+        if ($query) {
+            $system = $query->fetch_assoc(); // Use fetch_assoc() for an associative array
+            if ($system) {
+                foreach ($system as $k => $v) {
+                    $_SESSION['system'][$k] = $v;
+                }
+            } else {
+                echo "Warning: No system settings found.";
+            }
+        } else {
+            echo "Error: Database query failed.";
+        }
+    }
+    ob_end_flush();
+
+	if(isset($_SESSION['login_user_id'])) {
         if($_SESSION['login_type'] == 1) {
             header("location:admin/index.php"); // Admin
         } elseif ($_SESSION['login_type'] == 2) {
@@ -7,6 +29,7 @@
         }
     }
 ?>
+<?php include('header.php'); ?>
 <style>
 	body{
 		width: 100%;
@@ -40,7 +63,7 @@
     flex: 1;
     height: 100vh;
     background: rgba(255, 255, 255, 0.1); /* Light translucency */
-}
+	}
 	#portal-left{
 		background:url(assets/img/pregnant_01.jpg);
 		background-position: center;
@@ -60,7 +83,7 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
+	}
 </style>
 
 <!DOCTYPE html>

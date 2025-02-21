@@ -23,7 +23,7 @@
                 success: function(resp) {
                     console.log("Logout Response:", resp.trim()); // Debugging Output
                     if (resp.trim() === "1") { // Ensure response is checked properly
-                        window.location.href = "/maternalhealth/auth/index.php"; // Redirect after logout
+                        window.location.href = "/team4-maternalhealthTracker/auth/index.php"; // Redirect after logout
                     } else {
                         alert("Logout failed. Please try again.");
                     }
@@ -43,7 +43,7 @@
   		
   		</div>
       <div class="col-md-4 float-left text-white">
-        <img src="/maternalhealth/auth/assets/img/dashboard logo.png" class="logo">
+        <img src="/team4-maternalhealthTracker/auth/assets/img/dashboard logo.png" class="logo">
         <large><b><?php echo isset($_SESSION['login_username']) ? $_SESSION['login_username'] : '' ?> | <?php echo ($_SESSION['login_type'] == 1) ? "Admin" : "Doctor" ?></b></large>
       </div>
 	  	<div class="user_session float-right">
@@ -52,7 +52,7 @@
               <div class="dropdown-menu" aria-labelledby="account_settings" style="left: -2.5em;">
                 <a class="dropdown-item" href="javascript:void(0)" id="manage_my_account"><i class="fa fa-cog"></i> Manage Account</a>
                 <a class="dropdown-item" href="../../"><i class="fa fa-home"></i> Site Home</a>
-                <a class="dropdown-item logout-link" href="/maternalhealth/auth/ajax/ajax.php?action=logout"><i class="fa fa-power-off"></i> Logout</a>
+                <a class="dropdown-item logout-link" href="/team4-maternalhealthTracker/auth/ajax/ajax.php?action=logout"><i class="fa fa-power-off"></i> Logout</a>
 
               </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 // Define Base URL to ensure correct asset paths
-$base_url = '/maternalHealth/auth/';
+$base_url = '/team4-maternalhealthTracker/auth/';
 ?>
 
 <!-- Meta Information -->

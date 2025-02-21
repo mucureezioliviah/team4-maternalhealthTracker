@@ -1,37 +1,3 @@
-<?php
-    session_start();
-    require_once 'db.php'; // Include the database connection file
-
-    ob_start();
-    if (!isset($_SESSION['system'])) {
-        $query = $conn->query("SELECT * FROM system_settings LIMIT 1");
-    
-        if ($query) {
-            $system = $query->fetch_assoc(); // Use fetch_assoc() for an associative array
-            if ($system) {
-                foreach ($system as $k => $v) {
-                    $_SESSION['system'][$k] = $v;
-                }
-            } else {
-                echo "Warning: No system settings found.";
-            }
-        } else {
-            echo "Error: Database query failed.";
-        }
-    }
-    ob_end_flush();
-?>
-
-<?php
-    if(isset($_SESSION['login_user_id'])) {
-        if($_SESSION['login_type'] == 1) {
-            header("location:admin/index.php"); // Admin
-        } elseif ($_SESSION['login_type'] == 2) {
-            header("location:doctor/index.php"); // Doctor
-        }
-    }
-?>
-<?php include('header.php'); ?>
 <style>
 	.login-body{
         position: relative;
@@ -83,7 +49,7 @@
         height: 100%;
         filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.2));
 		animation: fadeInUp 1s ease;
-}
+	}
 
 	.logo img {
         margin-left: 13%;
@@ -155,7 +121,7 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
+	}
 </style>
 
 <!DOCTYPE html>
