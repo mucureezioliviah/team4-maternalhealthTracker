@@ -24,6 +24,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 'home';
     }
 
     #sidebar .nav-item {
+        font-weight: 400;
         display: flex;
         align-items: center;
         padding: 12px;
@@ -33,6 +34,7 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 'home';
         transition: background 0.3s;
     }
     #sidebar .nav-item-active{
+        font-weight: 900;
         display: flex;
         align-items: center;
         padding: 12px;
