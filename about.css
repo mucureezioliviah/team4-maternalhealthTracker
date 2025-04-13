@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Courier New', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Bar */
+.navigation-bar {
+    background-color: #005fa3;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navigation-bar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.navigation-bar a:hover,
+.navigation-bar a.active {
+    background-color: #003f75;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* About Us Section */
+.about-container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-container p {
+    font-size: 1.125rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.team-section {
+    margin-top: 40px;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    color: #0077cc;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.team-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-section ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.team-section ul li {
+    font-size: 1.125rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 30px;
+}
