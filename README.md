@@ -7,5 +7,5 @@ Version 1.3 of the Maternal Health Tracking has further modified the login page.
 
 Version 1.4 of the Maternal Health Tracking - the Doctor - homepage/Dashboard has been traced out and the patient management module has been completely implemented.
 
-# Project Size Metrics
+ Project Size Metrics
 - See full project size report here: [SizeMetrics.md]
