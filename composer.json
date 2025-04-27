@@ -1,0 +1,13 @@
+{
+    "name": "team4/maternalhealthtracker",
+    "description": "Maternal Health Tracker Project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Team 4"
+        }
+    ],
+    "require-dev": {
+        "phpmd/phpmd": "^2.15"
+    }
+}
