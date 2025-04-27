@@ -1,11 +1,14 @@
 # Software Size Measurement Process
 -Tool Used: VSCode Counter Extension
+
 -Measurement Date: April 15, 2025
+
 -Methodology:
   - Counted Lines of Code (LOC), Comment Lines, and Blank Lines.
   - Included only source code files: HTML, CSS, JavaScript, PHP, Python, etc.
   - Excluded non-code files like Markdown (`.md`) and images.
-  -Purpose: To determine the overall size of the Maternal Health Tracker Web Application for documentation and project planning.
+  
+-Purpose: To determine the overall size of the Maternal Health Tracker Web Application for documentation and project planning.
 
 | Language   | files | code    | comment | blank  | total   |
 |------------|-------|---------|---------|--------|---------|
